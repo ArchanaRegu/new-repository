@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestBase {
 public WebDriver driver;
 public WebDriver WebDriverManager() throws IOException {
+	
 	FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/global.properties");
 	Properties prop=new Properties();
 	prop.load(fis);
@@ -25,7 +26,8 @@ public WebDriver WebDriverManager() throws IOException {
 	if(browser.equalsIgnoreCase("firefox")) {
 		driver=new FirefoxDriver();
 	}
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.get(url);
 	}
 	return driver;

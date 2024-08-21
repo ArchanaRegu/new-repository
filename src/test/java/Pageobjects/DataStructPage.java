@@ -18,7 +18,7 @@ public WebDriver driver;
 public 	DataStructPage(WebDriver driver) {
 	this.driver=driver;
 }
-public void click_DSgetstart(String string) {
+public void click_DSgetstart() {
 	driver.findElement(DS_GeTS_link).click();
 	System.out.println("Title of new page "+driver.getTitle());
 	
@@ -44,18 +44,18 @@ public void enter_Invalideditor() {
 public String Output() {
 	driver.findElement(Runbtn).click();
 	String outputActualResult=null;
-	//try {
+	try {
 		WebElement output_result=driver.findElement(output);
 		outputActualResult=output_result.getText();
-//	} catch (Exception e) {
-//		outputActualResult=e.getMessage();
-//		try {
-//			driver.switchTo().alert().accept();
-//		} catch (Exception e2) {
-//			System.out.println(e2.getStackTrace());
-//		}
+	} catch (Exception e) {
+		outputActualResult=e.getMessage();
+		try {
+			driver.switchTo().alert().accept();
+		} catch (Exception e2) {
+			System.out.println(e2.getStackTrace());
+		}
 		
-//}
+}
 	
 	return outputActualResult;
 }

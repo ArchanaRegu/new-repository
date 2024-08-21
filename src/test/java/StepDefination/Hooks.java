@@ -1,5 +1,6 @@
 package StepDefination;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 
 public class Hooks {
 	TestContextSetup testcontextsetup;
@@ -32,18 +34,24 @@ public class Hooks {
 		Assert.assertTrue(landingpage.h1_ptag_getstarted());
 		landingpage.click_getstartbtn();
 		Assert.assertTrue(signinpage.regis_sign());
-		}
-	@Before(order=1)
-	public void nextBeforeScenario() {
 		System.out.println(signinpage.datastructure()+" is displayed");
-		signinpage.click_signin_link();
-		signinpage.enter_username("Nirvana", "archanachaya");
-		signinpage.click_login_btn();
-	}
+		}
+//	@Before(order=1)
+//	public void nextBeforeScenario() {
+//		
+//		signinpage.click_signin_link();
+//		signinpage.enter_username("Nirvana", "archanachaya");
+//		signinpage.click_login_btn();
+//	}
 	
 	@After
-	public void AfterScenario() throws IOException {
-		testcontextsetup.testbase.WebDriverManager().quit();
+	public void AfterScenario(Scenario scenario) throws IOException {
+		WebDriver driver=testcontextsetup.testbase.WebDriverManager();
+		if(scenario.isFailed()) {
+			byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			Allure.addAttachment("Failed Screenshot",new ByteArrayInputStream(screenshot));
+		}
+		driver.quit();
 	}
 	@AfterStep
 	public void AddScreenShot(Scenario scenario) throws IOException {
