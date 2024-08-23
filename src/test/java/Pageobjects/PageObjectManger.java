@@ -8,6 +8,7 @@ public landingpageobjects landingpage;
 public Signinpageobjects signinpage;
 public DataStructPage datastructpage;
 public ArraysDocPageObjects arraysdocpage;
+public StackPageobjects stackpageobject;
 public PageObjectManger(WebDriver driver) {
 	this.driver=driver;
 }
@@ -24,5 +25,8 @@ public Signinpageobjects getSigninpageobjects() {
 }public ArraysDocPageObjects getArrayDocPage() {
 	arraysdocpage=new ArraysDocPageObjects(driver);
 	return arraysdocpage;
+}public StackPageobjects getStackpageobjects() {
+	stackpageobject=new StackPageobjects(driver);
+	return stackpageobject;
 }
 }

@@ -36,13 +36,7 @@ public class Hooks {
 		Assert.assertTrue(signinpage.regis_sign());
 		System.out.println(signinpage.datastructure()+" is displayed");
 		}
-//	@Before(order=1)
-//	public void nextBeforeScenario() {
-//		
-//		signinpage.click_signin_link();
-//		signinpage.enter_username("Nirvana", "archanachaya");
-//		signinpage.click_login_btn();
-//	}
+
 	
 	@After
 	public void AfterScenario(Scenario scenario) throws IOException {
@@ -55,6 +49,7 @@ public class Hooks {
 	}
 	@AfterStep
 	public void AddScreenShot(Scenario scenario) throws IOException {
+		
 		WebDriver driver=testcontextsetup.testbase.WebDriverManager();
 		if(scenario.isFailed()) {
 			File sourcepath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
