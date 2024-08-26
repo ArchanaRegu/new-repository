@@ -32,13 +32,14 @@ public boolean topic_displayed() {
 	System.out.println("Title of new page:"+ driver.getTitle());
 	driver.findElement(tryhere).click();
 	System.out.println("Title of new page: "+driver.getTitle());
-}public void enter_valideditor() {
+}public void enter_valideditor(String validcode) {
 	WebElement editor_page=driver.findElement(input);
-    new Actions(driver).sendKeys(editor_page,"print('Hello Selenium')").perform();
+	
+    new Actions(driver).sendKeys(editor_page,validcode).perform();
 		}
-public void enter_Invalideditor() {
+public void enter_Invalideditor(String Invalidecode) {
 	WebElement editor_page=driver.findElement(input);
-    new Actions(driver).sendKeys(editor_page,"prin('Hello Selenium')").perform();
+    new Actions(driver).sendKeys(editor_page,Invalidecode).perform();
 	
 	}
 public String Output() {
