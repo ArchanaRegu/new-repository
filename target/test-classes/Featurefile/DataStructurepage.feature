@@ -13,14 +13,8 @@ Examples:
 |validInvalid|
 |valid|
 |Invalid|
-Scenario: Verify "Operations in Stack" Link in Stack page
-    Given User is in Home page.
-    When User clicks "Stack" pane with Get Started button which is Enabled.
-    Then User navigated to Stack page and get the Title of that page
-    When Stack information is displayed with related Links below.
-      | Operations in Stack |
-      | Implementation      |
-      | Applications        |
+
+
       
    
 

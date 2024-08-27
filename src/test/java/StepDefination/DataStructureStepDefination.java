@@ -27,12 +27,12 @@ public class DataStructureStepDefination {
 	Assert.assertTrue(datastructpage.topic_displayed());
 	datastructpage.click_timecomplex();
 	}
-	@And("User Enters valid code in editorpage")
+	@When("User Enters valid code in editorpage")
 	public void Enter_valid() throws IOException {
 	String validcode=testcontextsetup.exceldata.getExceldata(1, 2);	
 	datastructpage.enter_valideditor(validcode);	
 	}
-	@And("User Enters Invalid code in editorpage")
+	@When("User Enters Invalid code in editorpage")
      public void Enter_Invalid() throws IOException {
 		String Invalidcode=testcontextsetup.exceldata.getExceldata(1, 3);	
 		datastructpage.enter_Invalideditor(Invalidcode);

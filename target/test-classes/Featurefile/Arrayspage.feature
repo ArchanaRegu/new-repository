@@ -11,6 +11,18 @@ Feature: Verify Arrays page
       | Applications of Array     |
 
   @SmokeTest
+  Scenario Outline: Verify the Basic Operations in Lists Topics
+    Given User clicks "Basic Operations in Lists".
+    Then new page is displayed with [Try here>>>] button
+    When User Enters valid  code in editorpage
+    And Click Run button and capture the output
+
+    Examples: 
+      | validInvalid |
+      | valid        |
+      | Invalid      |
+
+  @SmokeTest
   Scenario Outline: Verify the Arrays in Python Topics
     Given User clicks "Arrays in Python".
     Then new page is displayed with [Try here>>>] button
@@ -35,20 +47,8 @@ Feature: Verify Arrays page
       | Invalid      |
 
   @SmokeTest
-  Scenario Outline: Verify the Basic Operations in Lists Topics
-    Given User clicks "Basic Operations in Lists".
-    Then new page is displayed with [Try here>>>] button
-    When User Enters <validInvalid> code in editorpage
-    And Click Run button and capture the output
-
-    Examples: 
-      | validInvalid |
-      | valid        |
-      | Invalid      |
-
-  @SmokeTest
   Scenario Outline: Verify Applications of Array Topics
-    Given User clicks "Applications of Arrays".
+    Given User clicks "Applications of Array".
     Then new page is displayed with [Try here>>>] button
     When User Enters <validInvalid> code in editorpage
     And Click Run button and capture the output

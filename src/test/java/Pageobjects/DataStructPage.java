@@ -57,7 +57,7 @@ public String Output() {
 		}
 		
 }
-	
+	System.out.println(outputActualResult);
 	return outputActualResult;
 }
 }
