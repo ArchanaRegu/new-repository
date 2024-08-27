@@ -48,7 +48,7 @@ Feature: Verify Arrays page
 
   @SmokeTest
   Scenario Outline: Verify Applications of Array Topics
-    Given User clicks "Applications of Array".
+    Given User clicks "Applications of Arrays".
     Then new page is displayed with [Try here>>>] button
     When User Enters <validInvalid> code in editorpage
     And Click Run button and capture the output

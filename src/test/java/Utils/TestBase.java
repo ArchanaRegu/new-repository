@@ -27,7 +27,7 @@ public WebDriver WebDriverManager() throws IOException {
 		driver=new FirefoxDriver();
 	}
 	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	driver.get(url);
 	}
 	return driver;

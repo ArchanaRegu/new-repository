@@ -34,23 +34,23 @@ public class Hooks {
 		Assert.assertTrue(landingpage.h1_ptag_getstarted());
 		landingpage.click_getstartbtn();
 				}
-/*//	@After
-//	public void AfterScenario(Scenario scenario) throws IOException {
-//		WebDriver driver=testcontextsetup.testbase.WebDriverManager();
-//		if(scenario.isFailed()) {
-//			byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-//			Allure.addAttachment("Failed Screenshot",new ByteArrayInputStream(screenshot));
-//		}
-//		driver.quit();
-//	}
-//	@AfterStep
-//	public void AddScreenShot(Scenario scenario) throws IOException {
-//		WebDriver driver=testcontextsetup.testbase.WebDriverManager();
-//		if(scenario.isFailed()) {
-//			File sourcepath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//			byte[] fileContent=FileUtils.readFileToByteArray(sourcepath);
-//			scenario.attach(fileContent, "image/png", "image");
-//		}}*/
+	@After
+	public void AfterScenario(Scenario scenario) throws IOException {
+		WebDriver driver=testcontextsetup.testbase.WebDriverManager();
+		if(scenario.isFailed()) {
+			byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			Allure.addAttachment("Failed Screenshot",new ByteArrayInputStream(screenshot));
+		}
+		driver.quit();
+	}
+	@AfterStep
+	public void AddScreenShot(Scenario scenario) throws IOException {
+		WebDriver driver=testcontextsetup.testbase.WebDriverManager();
+		if(scenario.isFailed()) {
+			File sourcepath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			byte[] fileContent=FileUtils.readFileToByteArray(sourcepath);
+			scenario.attach(fileContent, "image/png", "image");
+		}}
 	}
 
 
