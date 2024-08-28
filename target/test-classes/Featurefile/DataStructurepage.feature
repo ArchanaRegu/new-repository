@@ -1,6 +1,7 @@
 Feature: DsAlgo Landing page
 Background:
-Given User clicks Sign in link.
+Given User clicks GetStarted button.
+Then User clicks Sign in link.
 When User enters Username and password and clicks login button.
 Then User enters home page.
 @Monkey

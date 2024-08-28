@@ -1,7 +1,8 @@
 Feature: Verify Arrays page
 
   Background: Verify loginpage Signin page
-    Given User clicks Sign in link.
+    Given User clicks GetStarted button.
+    Then User clicks Sign in link.
     When User enters Username and password and clicks login button.
     And User Clicks GetStated button of Arrays pane.
     Then Arrays page is displayed with Topics covered.
@@ -14,7 +15,7 @@ Feature: Verify Arrays page
   Scenario Outline: Verify the Basic Operations in Lists Topics
     Given User clicks "Basic Operations in Lists".
     Then new page is displayed with [Try here>>>] button
-    When User Enters valid  code in editorpage
+    When User Enters <validInvalid> code in editorpage
     And Click Run button and capture the output
 
     Examples: 

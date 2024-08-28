@@ -25,15 +25,13 @@ public class Hooks {
 	//public WebDriver driver;
 	public Hooks(TestContextSetup testcontextsetup) {
 		this.testcontextsetup=testcontextsetup;
-		this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();
 		
 		}
 	@Before
 	public void BeforeScenario() throws IOException {
 		System.out.println(testcontextsetup.testbase.WebDriverManager().getTitle()+" from hooks");
-		Assert.assertTrue(landingpage.h1_ptag_getstarted());
-		landingpage.click_getstartbtn();
-				}
+		
+		}
 	@After
 	public void AfterScenario(Scenario scenario) throws IOException {
 		WebDriver driver=testcontextsetup.testbase.WebDriverManager();

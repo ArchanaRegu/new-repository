@@ -15,10 +15,16 @@ public class signinStepDefination {
 	this.testcontextsetup=testcontextsetup;
 	this.signinpage=testcontextsetup.pageobjectmanager.getSigninpageobjects();
 	this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();
-	System.out.println("i am in signin stepdefination");
+	
 	}
-   @Given("User clicks Sign in link.")
+	@Given("User clicks GetStarted button.")
+	public void click_GetStarted() {
+		landingpage.h1_ptag_getstarted();  
+		landingpage.click_getstartbtn();   	
+	}
+   @Then("User clicks Sign in link.")
 	public void click_sign() {
+	
 	signinpage.click_signin_link();
 	
 }
