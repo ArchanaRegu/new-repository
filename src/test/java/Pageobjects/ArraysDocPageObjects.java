@@ -38,7 +38,7 @@ public List<String> List_arraysTopics() {
 	}
 	return ArrayNames;
 }
-public void clickArrayListLinks(String string) {
+public void clickPaneListLinks(String string) {
 	driver.findElement(By.linkText(string)).click();
 	
 }public void click_Tryhere_btn() {

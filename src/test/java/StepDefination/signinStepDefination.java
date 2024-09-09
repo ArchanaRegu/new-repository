@@ -2,6 +2,8 @@ package StepDefination;
 
 import java.io.IOException;
 
+import org.testng.Assert;
+
 import Pageobjects.Signinpageobjects;
 import Pageobjects.landingpageobjects;
 import Utils.TestContextSetup;
@@ -19,7 +21,9 @@ public class signinStepDefination {
 	}
 	@Given("User clicks GetStarted button.")
 	public void click_GetStarted() {
-		landingpage.h1_ptag_getstarted();  
+		Assert.assertTrue(landingpage.h1_display());
+		Assert.assertTrue(landingpage.p_diaplay());
+		Assert.assertTrue(landingpage.getstarteddp());
 		landingpage.click_getstartbtn();   	
 	}
    @Then("User clicks Sign in link.")

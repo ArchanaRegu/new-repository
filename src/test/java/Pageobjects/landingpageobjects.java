@@ -26,15 +26,17 @@ public boolean h1_ptag_getstarted() {
 	WebElement getstarted_btn=driver.findElement(getStarted);
 	return h1.isDisplayed() && ptag.isDisplayed() && getstarted_btn.isDisplayed();
 }
-public String h1_display() {
-	String h1tag=driver.findElement(h1tag_launchpage).getText();
-	return h1tag;
-}public String p_diaplay() {
-	String ptag=driver.findElement(ptag_launchpage).getText();
-	return ptag;
-}public String getstarteddp() {
-	String getstarted_link=driver.findElement(getStarted).getText();
-	return getstarted_link;
+public boolean h1_display() {
+	WebElement h1tag=driver.findElement(h1tag_launchpage);
+	System.out.println(h1tag.getText());
+	return h1tag.isDisplayed();
+}public boolean p_diaplay() {
+	WebElement ptag=driver.findElement(ptag_launchpage);
+	System.out.println(ptag.getText());
+	return ptag.isDisplayed();
+}public boolean getstarteddp() {
+	WebElement getstarted_link=driver.findElement(getStarted);
+	return getstarted_link.isDisplayed();
 }public void click_getstartbtn() {
 	driver.findElement(getStarted).click();
 }

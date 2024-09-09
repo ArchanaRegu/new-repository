@@ -17,20 +17,14 @@ public StackStepDefination(TestContextSetup testcontestsetup) {
 	this.stackpageobjects=testcontestsetup.pageobjectmanager.getStackpageobjects();
 	
 }
-@Given("User is in Home page.User clicks Get Started button of {string} pane .")
-public void user_is_in_home_page_user_clicks_get_started_button_of_pane(String string) {
+@And("User Clicks GetStated button of Stack pane.")
+public void user_clicks_get_started_buttonStackpane() {
 stackpageobjects.click_stack_pane();
 
 Assert.assertTrue(stackpageobjects.display_topic_cover());
 }
-
-@Then("User navigated to Stack page and get the Title of that page")
-public void user_navigated_to_stack_page_and_get_the_title_of_that_page() {
-	System.out.println(stackpageobjects.get_title());
-}
-
-@And("Stack information is displayed with related Links below.")
-public void stack_information_is_displayed_with_related_links_below(DataTable dataTable) {
+@Then("Stacks page is displayed with Topics covered.")
+public void stack_information_is_displayed(DataTable dataTable) {
 	List<String>Expected_list=dataTable.asList();
 	System.out.println(Expected_list);
 	Assert.assertEquals(Expected_list, stackpageobjects.alltopics());

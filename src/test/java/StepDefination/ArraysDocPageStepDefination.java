@@ -38,7 +38,7 @@ public class ArraysDocPageStepDefination {
 	public void click_arrays_in_python(String ArraysLinks) {
 		System.out.println("Title:"+landingpage.get_Title());
 		System.out.println(ArraysLinks+" This link ");
-		arraysdocpage.clickArrayListLinks(ArraysLinks);
+		arraysdocpage.clickPaneListLinks(ArraysLinks);
 	}
 	@When("new page is displayed with [Try here>>>] button")
 	public void arrays_try_here_button() {
