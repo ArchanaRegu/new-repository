@@ -16,7 +16,7 @@ public class DataStructureStepDefination {
 	public DataStructureStepDefination(TestContextSetup testcontextsetup) {
 		this.testcontextsetup=testcontextsetup;
 		datastructpage=testcontextsetup.pageobjectmanager.getDataStructPage();
-		System.out.println("from datastructstepDefination");
+		
 	}
 	@Given("Click  GetStarted button of Data Structures-Introduction pane.")
 	public void click_get_stated_button_of_pane() {

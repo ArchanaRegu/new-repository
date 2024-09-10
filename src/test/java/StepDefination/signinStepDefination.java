@@ -19,14 +19,14 @@ public class signinStepDefination {
 	this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();
 	
 	}
-	@Given("User clicks GetStarted button.")
-	public void click_GetStarted() {
-		Assert.assertTrue(landingpage.h1_display());
-		Assert.assertTrue(landingpage.p_diaplay());
-		Assert.assertTrue(landingpage.getstarteddp());
-		landingpage.click_getstartbtn();   	
-	}
-   @Then("User clicks Sign in link.")
+//	@Given("User clicks GetStarted button.")
+//	public void click_GetStarted() {
+//		Assert.assertTrue(landingpage.h1_display());
+//		Assert.assertTrue(landingpage.p_diaplay());
+//		Assert.assertTrue(landingpage.getstarteddp());
+//		landingpage.click_getstartbtn();   	
+//	}
+   @Given("User clicks Sign in link.")
 	public void click_sign() {
 	
 	signinpage.click_signin_link();

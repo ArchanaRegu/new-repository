@@ -16,10 +16,13 @@ public class ArraysDocPageStepDefination {
 	TestContextSetup testcontextsetup;
 	ArraysDocPageObjects arraysdocpage;
 	landingpageobjects landingpage;
+	Testngannotations testngannotations;
 	public ArraysDocPageStepDefination(TestContextSetup testcontextsetup) {
+		this.testngannotations=testcontextsetup.testngannotations;
 		this.testcontextsetup=testcontextsetup;
 		this.arraysdocpage=testcontextsetup.pageobjectmanager.getArrayDocPage();
 		this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();
+		
 	}
 	@And("User Clicks GetStated button of Arrays pane.")
 	public void user_clicks_get_stated_button_of_pane() {

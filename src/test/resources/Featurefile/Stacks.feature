@@ -1,8 +1,7 @@
 Feature: Verify Arrays page
 
   Background: Verify loginpage Signin page
-    Given User clicks GetStarted button.
-    Then User clicks Sign in link.
+    Given User clicks Sign in link.
     When User enters Username and password and clicks login button.
     And User Clicks GetStated button of Stack pane.
     Then Stacks page is displayed with Topics covered.
