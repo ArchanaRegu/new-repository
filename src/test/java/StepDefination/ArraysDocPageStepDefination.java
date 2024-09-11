@@ -16,9 +16,7 @@ public class ArraysDocPageStepDefination {
 	TestContextSetup testcontextsetup;
 	ArraysDocPageObjects arraysdocpage;
 	landingpageobjects landingpage;
-	Testngannotations testngannotations;
 	public ArraysDocPageStepDefination(TestContextSetup testcontextsetup) {
-		this.testngannotations=testcontextsetup.testngannotations;
 		this.testcontextsetup=testcontextsetup;
 		this.arraysdocpage=testcontextsetup.pageobjectmanager.getArrayDocPage();
 		this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();

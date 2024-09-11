@@ -9,6 +9,10 @@ public Signinpageobjects signinpage;
 public DataStructPage datastructpage;
 public ArraysDocPageObjects arraysdocpage;
 public StackPageobjects stackpageobject;
+public LinkedListPageObjects linkedPage;
+public QueuesPageObjects queuesPageObject;
+public GraphsPageObjects graphsPageObjects;
+public TreesPageObjects treesPageObjects;
 public PageObjectManger(WebDriver driver) {
 	this.driver=driver;
 }
@@ -28,5 +32,24 @@ public Signinpageobjects getSigninpageobjects() {
 }public StackPageobjects getStackpageobjects() {
 	stackpageobject=new StackPageobjects(driver);
 	return stackpageobject;
+}
+public LinkedListPageObjects getLinkedPageObject() {
+	linkedPage = new LinkedListPageObjects(driver);
+	return linkedPage;
+}
+
+public QueuesPageObjects getQueuesPageObject() {
+	queuesPageObject = new QueuesPageObjects(driver);
+	return queuesPageObject;
+}
+
+public GraphsPageObjects getGraphsPageObjects() {
+	graphsPageObjects = new GraphsPageObjects(driver);
+	return graphsPageObjects;
+
+}	
+public TreesPageObjects getTreesPageObjects() {
+	treesPageObjects = new TreesPageObjects(driver);
+	return treesPageObjects;
 }
 }

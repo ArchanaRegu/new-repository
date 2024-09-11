@@ -3,6 +3,13 @@ package StepDefination;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import Pageobjects.Signinpageobjects;
 import Pageobjects.landingpageobjects;
@@ -19,13 +26,7 @@ public class signinStepDefination {
 	this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();
 	
 	}
-//	@Given("User clicks GetStarted button.")
-//	public void click_GetStarted() {
-//		Assert.assertTrue(landingpage.h1_display());
-//		Assert.assertTrue(landingpage.p_diaplay());
-//		Assert.assertTrue(landingpage.getstarteddp());
-//		landingpage.click_getstartbtn();   	
-//	}
+	
    @Given("User clicks Sign in link.")
 	public void click_sign() {
 	
