@@ -33,7 +33,7 @@ Feature: Verify Trees page
 
   @TreesTest
   Scenario Outline: Verify Terminologies in the Topics
-    Given User clicks "Terminologie"
+    Given User clicks "Terminologies"
     Then new page is displayed with [Try here>>>] button
     When User Enters <validInvalid> code in editorpage
     And Click Run button and capture the output
