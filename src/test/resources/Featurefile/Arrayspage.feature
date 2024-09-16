@@ -11,7 +11,7 @@ Feature: Verify Arrays page
       | Applications of Array     |
 
   @SmokeTest
-  Scenario Outline: Verify the Basic Operations in Lists Topics
+  Scenario Outline: Verify the Basic Operations in Lists in Array Topics
     Given User clicks "Basic Operations in Lists".
     Then new page is displayed with [Try here>>>] button
     When User Enters <validInvalid> code in editorpage

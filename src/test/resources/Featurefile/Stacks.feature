@@ -22,7 +22,7 @@ Feature: Verify Stack page
       | Invalid      |
 
   @StackTest
-  Scenario Outline: Verify the Implementation Topics
+  Scenario Outline: Verify the Implementation in stack Topics
     Given User clicks "Implementation".
     Then new page is displayed with [Try here>>>] button
     When User Enters <validInvalid> code in editorpage
@@ -34,7 +34,7 @@ Feature: Verify Stack page
       | Invalid      |
 
   @StackTest
-  Scenario Outline: Verify the Applications Topics
+  Scenario Outline: Verify the Applications in Stack Topics
     Given User clicks "Applications".
     Then new page is displayed with [Try here>>>] button
     When User Enters <validInvalid> code in editorpage
