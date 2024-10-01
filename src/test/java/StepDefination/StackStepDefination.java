@@ -17,11 +17,15 @@ public StackStepDefination(TestContextSetup testcontestsetup) {
 	this.stackpageobjects=testcontestsetup.pageobjectmanager.getStackpageobjects();
 	
 }
-@And("User Clicks GetStated button of Stack pane.")
+@Then("User navigates to Homepage and Clicks GetStated button of Stack pane.")
 public void user_clicks_get_started_buttonStackpane() {
+stackpageobjects.get_title();
 stackpageobjects.click_stack_pane();
-
 Assert.assertTrue(stackpageobjects.display_topic_cover());
+}
+@Given("User is in Stack Page.")
+public void Stackpage() {
+	stackpageobjects.get_title();
 }
 @Then("Stacks page is displayed with Topics covered.")
 public void stack_information_is_displayed(DataTable dataTable) {

@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class StackPageobjects {
 private By stack_pane=By.xpath("//a[@href='stack' and text()='Get Started']");
@@ -21,6 +22,11 @@ public StackPageobjects(WebDriver driver) {
 public String get_title() {
 	
 	return driver.getTitle();
+}
+public void scroll_topicscovered() {
+	Actions action = new Actions(driver);
+	WebElement list = driver.findElement(topic_cover); 
+	action.moveToElement(list);
 }
 public void click_stack_pane() {
 	driver.findElement(stack_pane).click();

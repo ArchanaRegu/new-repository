@@ -20,12 +20,15 @@ public class QueuesStepDefinition {
 		this.textContextSetup = textContextSetup;
 		queuesPageObjects = textContextSetup.pageobjectmanager.getQueuesPageObject();
 
-	}
-
-	@When("User Clicks GetStated button of Queues pane.")
+	} 
+	@Then("User navigates to Homepage and Clicks GetStated button of Queue pane.")
 	public void user_clicks_get_stated_button_of_queues_pane() {
 		queuesPageObjects.click_queuesGetStarted();
 		Assert.assertTrue(queuesPageObjects.displayHeading());
+	}
+	@Given("User is in Queue Page.")
+	public void Quesuepage() {
+		queuesPageObjects.get_Title();
 	}
 
 	@Then("Queues page is displayed with Topics covered.")

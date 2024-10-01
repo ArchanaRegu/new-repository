@@ -7,6 +7,7 @@ import org.testng.Assert;
 import Pageobjects.TreesPageObjects;
 import Utils.TestContextSetup;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -19,13 +20,16 @@ public class TreesStepDefinition {
 		treesPageObjects = textContextSetup.pageobjectmanager.getTreesPageObjects();
 		
 	}
-	
-	@When("User Clicks GetStated button of Trees pane.")
+	 @Then("User navigates to Homepage and Clicks GetStated button of Trees pane.")
 	public void user_clicks_get_stated_button_of_trees_pane() {
 		treesPageObjects.click_TreesgetButton();
 		Assert.assertTrue(treesPageObjects.displayHeading());
 	    
 	}
+	 @Given("User is in Tree Page.")
+	 public void Treepage() {
+		 treesPageObjects.get_title();
+	 }
 
 	@Then("Trees page is displayed with Topics covered.")
 	public void trees_page_is_displayed_with_topics_covered(DataTable dataTable) {		

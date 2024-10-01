@@ -18,12 +18,17 @@ public class LinkedListStepDefinition {
 		linkedPageObject = textContextSetup.pageobjectmanager.getLinkedPageObject();
 		
 	}
-	@When("User Clicks GetStated button of LinkedList pane.")
+	@Then("User navigates to Homepage and Clicks GetStated button of LinkedList pane.")
 	public void user_clicks_get_stated_button_of_linked_list_pane() {
+		linkedPageObject.get_Title();
 		linkedPageObject.click_LinkedgetButton();
 		Assert.assertTrue(linkedPageObject.displayHeading());
 
 	}
+	 @Given("User is in LinkedList page.")
+	 public void LinkedListpage() {
+		 linkedPageObject.get_Title();
+	 }
 
 	@Then("LinkedList page is displayed with Topics covered.")
 	public void linked_list_page_is_displayed_with_topics_covered(DataTable LinkedList_topics) {

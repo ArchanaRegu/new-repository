@@ -13,8 +13,13 @@ public LinkedListPageObjects linkedPage;
 public QueuesPageObjects queuesPageObject;
 public GraphsPageObjects graphsPageObjects;
 public TreesPageObjects treesPageObjects;
+public RegistrationPage registerpage;
 public PageObjectManger(WebDriver driver) {
 	this.driver=driver;
+}
+public RegistrationPage getRegistrationPage() {
+	registerpage=new RegistrationPage(driver);
+	return registerpage;
 }
 public landingpageobjects getLandingpageobjects() {
 	landingpage=new landingpageobjects(driver);

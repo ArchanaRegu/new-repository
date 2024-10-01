@@ -21,6 +21,7 @@ public class Signinpageobjects {
 	public Signinpageobjects(WebDriver driver) {
 		this.driver=driver;
 	}
+	
 	public boolean regis_sign(){
 		WebElement register=driver.findElement(register_link);
 		WebElement sign_in=driver.findElement(signin);

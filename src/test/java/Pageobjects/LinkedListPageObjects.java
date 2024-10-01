@@ -27,6 +27,9 @@ public class LinkedListPageObjects {
 
 		this.driver = driver;
 	}
+	public String get_Title() {
+		return driver.getTitle();
+	}
 
 	public void click_LinkedgetButton() {
 		driver.findElement(linkGetBtn).click();

@@ -12,7 +12,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
 public class ArraysDocPageStepDefination {
-	WebDriver driver;
+	
 	TestContextSetup testcontextsetup;
 	ArraysDocPageObjects arraysdocpage;
 	landingpageobjects landingpage;
@@ -20,20 +20,29 @@ public class ArraysDocPageStepDefination {
 		this.testcontextsetup=testcontextsetup;
 		this.arraysdocpage=testcontextsetup.pageobjectmanager.getArrayDocPage();
 		this.landingpage=testcontextsetup.pageobjectmanager.getLandingpageobjects();
-		
-	}
-	@And("User Clicks GetStated button of Arrays pane.")
-	public void user_clicks_get_stated_button_of_pane() {
+	} 
+	@Then("User navigated to HomePage and Clicks GetStarted button of ArrayPane")		
+	 public void user_clicks_get_stated_button_of_pane() {
 		arraysdocpage.click_getstarted();
 		Assert.assertTrue(arraysdocpage.topic_display());
 	}
-
-	@Then("Arrays page is displayed with Topics covered.")
-	public void page_is_displayed_with_topics_covered(DataTable Array_topics) {
-	    List<String>Expected_list=Array_topics.asList();
-	    System.out.println("expected list: "+Expected_list);
-	    System.out.println("actaual list:"+arraysdocpage.List_arraysTopics());
-	    Assert.assertEquals(arraysdocpage.List_arraysTopics(),Expected_list);
+	 @Given("User is navigated to Arrays Page.")
+	 public void navigate_arrpage() {
+		 landingpage.get_Title();
+	 }
+	 @Then("List of Topic covered in ArrayPage.")
+	 public void ArrayTopics(DataTable datatable) {
+		 List<String>Expected_list=datatable.asList();
+		 Assert.assertEquals(Expected_list,arraysdocpage.List_arraysTopics());
+	 }
+	 @Then("User navigated to HomePage.")
+	 public void user_navigated_to_home_page() {
+	     landingpage.get_Title();
+	 }
+	 
+	 @When("Arrays page is displayed with Topic Covered.Scroll to TopicsCovered.")
+	public void page_is_displayed_with_topics_covered() {
+	   System.out.println("actaual list:"+arraysdocpage.List_arraysTopics());
 	}
 	@Given("User clicks {string}.")
 	public void click_arrays_in_python(String ArraysLinks) {
@@ -41,7 +50,7 @@ public class ArraysDocPageStepDefination {
 		System.out.println(ArraysLinks+" This link ");
 		arraysdocpage.clickPaneListLinks(ArraysLinks);
 	}
-	@When("new page is displayed with [Try here>>>] button")
+	@Then("new page is displayed with [Try here>>>] button")
 	public void arrays_try_here_button() {
 		System.out.println("Title:"+landingpage.get_Title());
 		arraysdocpage.click_Tryhere_btn();

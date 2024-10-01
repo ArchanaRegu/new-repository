@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class ArraysDocPageObjects {
 public WebDriver driver;
@@ -21,6 +22,11 @@ private By tryhere=By.linkText("Try here>>>");
 public ArraysDocPageObjects(WebDriver driver) {
 	this.driver=driver;
 	
+}
+public void scroll_topicscovered() {
+	Actions action = new Actions(driver);
+	WebElement list = driver.findElement(topics_cov); 
+	action.moveToElement(list);
 }
 public void click_getstarted() {
 	driver.findElement(Array_getstart).click();

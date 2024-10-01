@@ -11,13 +11,26 @@ public class landingpageobjects {
 private By h1tag_launchpage=By.cssSelector("h1");
 private By ptag_launchpage=By.cssSelector("p");
 private By getStarted=By.linkText("Get Started");
-
+private By drop_dn_btn=By.xpath("//a[@data-toggle='dropdown']");
+private By drop_down=By.cssSelector(".dropdown-menu");
+private By drop_downmenu=By.cssSelector(".dropdown-menu a.dropdown-item");
+private By listelements=By.tagName("a");
 WebDriver driver;
 public landingpageobjects(WebDriver driver) {
 	this.driver=driver;
 }
 public String get_Title() {
 	return driver.getTitle();
+}
+public List<String> dropdownmenu() {
+	driver.findElement(drop_dn_btn).click();
+	List<String>listnames=new ArrayList<>();
+	List<WebElement>dropdownlist=driver.findElements(drop_downmenu);
+	for(WebElement element:dropdownlist) {
+		String ele=element.getText();
+		listnames.add(ele);
+	}
+	return listnames;
 }
 public boolean h1_ptag_getstarted() {
 	WebElement h1=driver.findElement(h1tag_launchpage);
